@@ -233,6 +233,25 @@ body {
   width: 100%;
   border-radius: 5px;
   height: 100%;
+nav ul {
+  /* ici ma transistion media */
+
+
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+nav a {
+
+ 
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 }
 
 }
