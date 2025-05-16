@@ -4,255 +4,333 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Couleurs principales */
+  --color-primary: #f5af7a;
+  --color-secondary: #c68553;
+  --color-accent: #F5A623;
+
+  /* Couleurs de fond  ////////////// ici ma variable*/
+  --color-background: #f5af7a;
+
+
+  --color-hero-background: #f0f4f8;
+
+  /* Couleurs de texte */
+  --color-text: #333333;
+  --color-text-light: #777777;
+
+  /* Autres */
+  --color-border: #e0e0e0;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+
+}
+
+/* ************************************** */
+
+
+/* ===== Scrollbar personnalisée large (compatible Chrome, Edge, Safari, Opera, Firefox) ===== */
+:root {
+  --scrollbar-bg: #f0f0f0;
+  --scrollbar-thumb: #888;
+  --scrollbar-thumb-hover: #666;
+  --scrollbar-width: 400px; /* <-- Largeur de la scrollbar ici ?*/
+}
+
+/* Chrome, Edge, Safari, Opera */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 100px;
+  border: 105px solid var(--scrollbar-bg); /* "padding" intérieur du thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox */
+* {
+  /*scrollbar-width: auto;  auto = largeur normale, "thin" pour mince */
+  scrollbar-width: auto; /* auto = largeur normale, "thin" pour mince */
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-bg);
+}
+
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fff;
   color: #333;
   line-height: 1.6;
-}
-
-.animated-gradient {
-  /* height: 10vh; */
-  /* pleine hauteur */
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  /* background-size: 4% 4%; */
-}
-
-nav ul {
-  /* ici ma transistion media */
-  transition: all 0.3s ease;
-
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-nav a {
-
-  transition: all 0.3s ease;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* .hero { */
-/* background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover; */
-
-/* } */
-
-.hero::before {
-  transition: all 0.3s ease;
-
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background: url(https://www.husse.fr/wp-content/uploads/2024/04/chat-maine-coon-husse.webp); */
-  background-size: auto;
-  background-repeat: no-repeat;
-  z-index: -1;
-  transform: scale(1.5);
-  filter: blur(2px);
-  transition: transform 1.3s cubic-bezier(0.4, 0, 1, 1);
-
-}
 
 
-
-.hero h2 {
-
-  transition: all 0.3s ease;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  /* background: #e91e63; */
-  background: rgb(4, 24, 291);
-  color: white;
-  text-decoration: none;
-  /* border-radius: 5px; */
-  border-radius: 1%;
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  /* background: #c2185b; */
-  background: rgb(4, 24, 291);
-
-}
-
-.produits {
-
-  transition: all 0.3s ease;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.produits h2 {
-  transition: all 0.3s ease;
-  margin-bottom: 30px;
-  font-size: 2rem;
-}
-
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.produit {
-   transition: all 0.3s ease;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  padding: 15px;
-  width: 200px;
-}
-
-.produit img {
-   transition: all 0.3s ease;
-  width: 100%;
-  border-radius: 5px;
-  height: 80%;
-}
-
-footer {
-  background: #f5f5f5;
-
-
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.video-promo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.video-promo video {
-  width: 100%;
-  max-width: 50%;
-}
-
-.causer {
-  text-decoration: underline;
-}
-
-.formulaire {
-  /* background: rgb(254, 24, 221); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}
-
-.formulaire form {
-
-  justify-items: center;
-
-}
-
-header {
-  position: relative;
-  overflow: hidden;
-  padding: 20px 0;
-  color: white;
-  text-align: center;
-  z-index: 1;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, red, yellow, green, cyan, blue, magenta, red);
-  background-size: 600% 600%;
-  animation: movingGradient 20s ease infinite;
-  z-index: -1;
-  opacity: 0.9;
-}
-
-@keyframes movingGradient {
-  0% {
-    background-position: 0% 50%;
+  .animated-gradient {
+    /* height: 10vh; */
+    /* pleine hauteur */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /* background-size: 4% 4%; */
   }
 
-  50% {
-    background-position: 100% 50%;
+  nav ul {
+    /* ici ma transistion media */
+    transition: all 0.3s ease;
+
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
   }
 
-  100% {
-    background-position: 0% 50%;
-  }
-}
+  nav a {
 
-
-body {
-  background-color: white;
-  font-size: 18px;
-  transition: background-color 0.5s ease, font-size 0.5s ease;
-}
-
-/* Moins de 853px */
-@media (max-width: 853px) {
-  body {
-    background-color: lightgray;
-    font-size: 16px;
-  }
-}
-
-/* Moins de 400px */
-@media (max-width: 400px) {
-  body {
-    background-color: #333;
+    transition: all 0.3s ease;
     color: white;
-    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
   }
 
-.produit img {
-  
-  width: 100%;
-  border-radius: 5px;
-  height: 100%;
-nav ul {
-  /* ici ma transistion media */
+  /* .hero { */
+  /* background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover; */
+
+  /* } */
+
+  .hero::before {
+    transition: all 0.3s ease;
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url(https://www.husse.fr/wp-content/uploads/2024/04/chat-maine-coon-husse.webp); */
+    background-size: auto;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transform: scale(1.5);
+    filter: blur(2px);
+    transition: transform 1.3s cubic-bezier(0.4, 0, 1, 1);
+
+  }
 
 
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-}
+  .hero h2 {
 
-nav a {
+    transition: all 0.3s ease;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
 
- 
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
 
-}
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    /* background: #e91e63; */
+    background: rgb(4, 24, 291);
+    color: white;
+    text-decoration: none;
+    /* border-radius: 5px; */
+    border-radius: 1%;
+    transition: 0.3s ease;
+  }
 
-}
+  .btn:hover {
+    /* background: #c2185b; */
+    background: rgb(4, 24, 291);
 
+  }
+
+  .produits {
+
+    transition: all 0.3s ease;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .produits h2 {
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
+
+  .grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+
+  .headerlogo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .logo {
+    width: 30px;
+    border: solid;
+    border-radius: 20px;
+  }
+
+
+
+  .produit {
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+  }
+
+  .produit img {
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 5px;
+    height: 80%;
+  }
+
+  footer {
+    background: var(--color-background);
+
+
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .video-promo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .video-promo video {
+    width: 100%;
+    max-width: 50%;
+  }
+
+  .causer {
+    text-decoration: underline;
+  }
+
+  .formulaire {
+    /* background: rgb(254, 24, 221); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .formulaire form {
+
+    justify-items: center;
+
+  }
+
+  header {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, red, yellow, green, cyan, blue, magenta, red);
+    background-size: 600% 600%;
+    animation: movingGradient 20s ease infinite;
+    z-index: -1;
+    opacity: 0.9;
+  }
+
+  @keyframes movingGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+  body {
+    background-color: white;
+    font-size: 18px;
+    transition: background-color 0.5s ease, font-size 0.5s ease;
+  }
+
+  /* 769 à1024px */
+  @media (max-width: 1024px) {
+    body {
+      background-color: lightgray;
+      font-size: 16px;
+    }
+  }
+
+  /* Moins de 768px telephone */
+  @media (max-width: 768px) {
+    body {
+      background-color: #333;
+      color: white;
+      font-size: 14px;
+    }
+
+    .produit img {
+
+      width: 100%;
+      border-radius: 5px;
+      height: 100%;
+    }
+      nav ul {
+        /* ici ma transistion media */
+
+
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 10px;
+      }
+
+      nav a {
+
+
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+    }
+
+  }
